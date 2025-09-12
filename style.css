@@ -1,0 +1,22 @@
+* {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body,
+main {
+    scroll-behavior: smooth;
+    margin: 0;
+}
+
+#container {
+    width: 100svw;
+    height: 100svh;
+    display: grid;
+    place-content: center;
+}
+
+#my-title {
+    font-size: 2em;
+    font-weight: bold;
+    text-align: center;
+}
