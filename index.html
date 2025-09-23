@@ -1,24 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog Site</title>
+    <title>Login/Register</title>
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-    <div id="container">
-        <span id="my-title">
-            Hello, world! 
-            <br>
-            Wessel is aan het dampen in z'n bedje
-            <br>
-            Dyami wilt de hele dag dampen, zelfs in de les.
-            
-        </span>
+    <div class="glass-container">
+        <div class="login-box">
+           <h2 id="form-title">Login</h2>
+           <!-- Login Form-->
+           <form id="login-form" action="#" method="POST">
+                <input type="text" id="user" name="user" required placeholder="Username or E-mail (@student.hu.nl)">
+                <input type="password" id="password" name="password" required placeholder="Password">
+                <div class="options">
+                   <input type="checkbox" id="remember" name="remember">
+                   <label for="remember">Remember me</label>
+                   <a href="#">Forgot Password?</a>
+                </div>
+                <button type="submit">Login</button>
+                <p>Don't have an account? <a href="#" id="show-register">Register</a></p>
+           </form>
+           <!-- Register Form (hidden by default) -->
+           <form id="register-form" action="#" method="POST" style="display: none;">
+                <input type="text" id="new-user" name="new-user" required placeholder="Username or E-mail (@student.hu.nl)">
+                <input type="password" id="new-password" name="new-password" required placeholder="Password">
+                <button type="submit">Register</button>
+                <p>Already have an account? <a href="#" id="show-login">Login</a></p>
+           </form>
+        </div>
     </div>
+    <script src="script.js"></script>
 </body>
-
-</html>
+</html> 
