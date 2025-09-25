@@ -17,7 +17,7 @@
                 <div class="options">
                    <input type="checkbox" id="remember" name="remember">
                    <label for="remember">Remember me</label>
-                   <a href="#">Forgot Password?</a>
+                   <a href="#" id="show-forgot">Forgot Password?</a>
                 </div>
                 <button type="submit">Login</button>
                 <p>Don't have an account? <a href="#" id="show-register">Register</a></p>
@@ -28,6 +28,14 @@
                 <input type="password" id="new-password" name="new-password" required placeholder="Password">
                 <button type="submit">Register</button>
                 <p>Already have an account? <a href="#" id="show-login">Login</a></p>
+
+              </form>
+
+           <form id="forgot-form" action="#" method="POST" style="display: none;">
+                <input type="text" id="forgot-email" name="forgot-email" required placeholder="E-mail (@student.hu.nl)">
+                <button type="submit">Reset Password</button>
+                <p>Go back to <a href="#" id="back-to-login">Login</a></p>
+       
            </form>
         </div>
     </div>
