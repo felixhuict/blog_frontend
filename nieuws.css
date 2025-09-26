@@ -1,0 +1,273 @@
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #000000;
+    color: #ffffff;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1280px; 
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1.5rem; 
+    padding-right: 1.5rem; 
+}
+
+.accent-gray {
+    color: #cbd0d9; 
+}
+
+.bg-card {
+    background-color: #111827; 
+}
+
+.card-border {
+    border: 1px solid #374151; 
+}
+
+.header {
+    padding-top: 1.5rem; 
+    padding-bottom: 1.5rem; 
+    border-bottom: 1px solid #374151;
+}
+
+.header-container {
+    text-align: center;
+}
+
+.header-title {
+    font-size: 2.25rem; 
+    line-height: 2.5rem;
+    font-weight: 700; 
+}
+
+@media (min-width: 768px) {
+    .header-title {
+        font-size: 3rem;
+        line-height: 1;
+    }
+}
+
+.header-subtitle {
+    margin-top: 0.5rem; 
+    font-size: 1.125rem; 
+    color: #d1d5db; 
+}
+
+.main-content {
+    padding-top: 3rem; 
+    padding-bottom: 3rem; 
+}
+
+.article-grid {
+    display: grid;
+    grid-template-columns: 1fr; 
+    gap: 2rem; 
+}
+
+@media (min-width: 768px) {
+    .article-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr)); 
+    }
+}
+
+@media (min-width: 1024px) {
+    .article-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr)); 
+    }
+}
+
+.article-card {
+    background-color: #111827;
+    border-radius: 0.5rem; 
+    border: 1px solid #374151;
+    overflow: hidden;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1); 
+    transition: transform 0.3s ease-out, box-shadow 0.3s ease-out; 
+}
+
+.article-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+}
+
+.card-image {
+    width: 100%;
+    height: 12rem; 
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 1.5rem; 
+}
+
+.card-category {
+    font-size: 0.875rem; 
+    font-weight: 600; 
+}
+
+.card-title {
+    font-size: 1.5rem; 
+    line-height: 2rem;
+    font-weight: 700; 
+    margin-top: 0.5rem; 
+    margin-bottom: 0.75rem; 
+}
+
+.card-text {
+    color: #9ca3af; 
+    margin-bottom: 1rem; 
+}
+
+.card-link {
+    display: inline-block;
+    color: #ffffff; 
+    background-color: #4b5563;
+    font-weight: 600; 
+    padding: 0.5rem 1rem; 
+    border-radius: 0.25rem; 
+    text-decoration: none;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.card-link:hover {
+    background-color: #374151; 
+}
+
+.fade-in-element {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in-element.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.footer {
+    padding-top: 1.5rem; 
+    padding-bottom: 1.5rem; 
+    margin-top: 3rem; 
+    border-top: 1px solid #374151;
+}
+
+.footer-container {
+    text-align: center;
+    color: #9ca3af; 
+}
+
+.footer-link-container {
+    margin-top: 0.5rem; 
+}
+
+.footer-link {
+    color: inherit;
+    text-decoration: underline;
+}
+
+.footer-link:hover {
+    color: #d1d5db; 
+}
+
+/* ======================================= */
+/* 1. STIJL DE THEMA-SCHAKELKNOP EN ZIJN LOCATIE */
+/* ======================================= */
+.header-container {
+    /* Zorgt ervoor dat elementen in de header flexibel zijn voor de knop */
+    display: flex;
+    flex-direction: column; /* Houd de titel en subtitel op aparte lijnen */
+    align-items: center;
+    position: relative; /* Nodig voor absolute positionering van de knop */
+}
+
+.theme-toggle-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5rem; 
+    color: #cbd0d9; /* Lichte kleur die al in uw CSS staat */
+    padding: 0.5rem;
+    position: absolute; /* Plaats de knop rechtsboven in de header */
+    top: 1.5rem; 
+    right: 1.5rem; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.3s ease;
+}
+
+.theme-toggle-btn:hover {
+    color: #ffffff;
+}
+
+/* Verberg de zon-icoon en toon de maan-icoon in light mode (standaard) */
+.sun-icon {
+    display: none;
+}
+.moon-icon {
+    display: block;
+}
+
+
+/* ======================================= */
+/* 2. DARK THEME DEFINITIES (BODY.DARK-THEME) */
+/* ======================================= */
+
+/* LET OP: De standaardkleuren in uw CSS zijn al DONKER (body background: #000000).
+   Dit blok definieert de 'Light Mode' als de 'dark-theme' klasse wordt TOEGEVOEGD (omgekeerde logica).
+   We definieren hier een LICHT thema! */
+
+body.dark-theme {
+    /* Algemene achtergrond en tekstkleur voor LIGHT mode */
+    background-color: #f8f8f8;
+    color: #1f2937;
+}
+
+body.dark-theme .accent-gray {
+    color: #4b5563; 
+}
+body.dark-theme .bg-card {
+    background-color: #ffffff; 
+}
+
+/* Zorg dat de MAAN-icoon verdwijnt en de ZON-icoon verschijnt in light mode */
+body.dark-theme .sun-icon {
+    display: block;
+}
+body.dark-theme .moon-icon {
+    display: none;
+}
+body.dark-theme .theme-toggle-btn {
+    color: #1f2937; /* Donkere kleur voor de knop in light mode */
+}
+body.dark-theme .theme-toggle-btn:hover {
+    color: #000000;
+}
+
+/* Pas header en footer aan */
+body.dark-theme .header {
+    border-bottom: 1px solid #e5e7eb;
+}
+body.dark-theme .footer {
+    border-top: 1px solid #e5e7eb;
+}
+body.dark-theme .footer-link-container {
+    color: #4b5563;
+}
+
+/* Pas artikelen aan */
+body.dark-theme .article-card {
+    background-color: #ffffff;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+}
+body.dark-theme .card-text {
+    color: #4b5563;
+}
+body.dark-theme .card-link {
+    background-color: #4b5563;
+    color: #ffffff;
+}
