@@ -1,0 +1,34 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Error 404 - Page Not Found</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/framer-motion/dist/framer-motion.umd.js"></script>
+</head>
+<body class="bg-gray-100 h-screen flex items-center justify-center">
+  <div class="text-center p-8 bg-white shadow-xl rounded-2xl max-w-md animate-fadeIn">
+    <h1 class="text-6xl font-bold text-red-500 animate-bounce">404</h1>
+    <p class="text-xl text-gray-700 mt-4 animate-slideIn">Oops! Page not found.</p>
+    <p class="text-gray-500 mt-2 animate-slideIn delay-200">The page you are looking for doesn't exist or has been moved.</p>
+    <a href="/" class="inline-block mt-6 px-6 py-3 bg-red-500 text-white font-semibold rounded-xl shadow hover:bg-red-600 transition duration-300 animate-pulse">Go Back Home</a>
+  </div>  <style>
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-fadeIn {
+      animation: fadeIn 0.8s ease-in-out;
+    }
+    .animate-slideIn {
+      animation: slideIn 1s ease-in-out forwards;
+    }
+    .delay-200 {
+      animation-delay: 0.2s;
+    }
+  </style></body>
+</html>
