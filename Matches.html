@@ -1,3 +1,6 @@
+
+
+
 <!DOCTYPE html>
 <html>
 
@@ -5,12 +8,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width= device-width, initial-scale =1.0">
     <title> Responisve Card slider</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
-        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/js/all.min.js"
-        integrity="sha512-6BTOlkauINO65nLhXhthZMtepgJSghyimIalb+crKRPhvhmsCdnIuGcVbR5/aQY2A+260iC1OPy1oCdB6pSSwQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/js/all.min.js" integrity="sha512-6BTOlkauINO65nLhXhthZMtepgJSghyimIalb+crKRPhvhmsCdnIuGcVbR5/aQY2A+260iC1OPy1oCdB6pSSwQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <style>
         body {
             background-color: #f8f8f8;
@@ -51,7 +50,23 @@
             transition: all 0.7s ease;
         }
 
+        .card-precent {
+            position: absolute;
+            top: 30px;
+            right: 20px;
+            background-color: rgb(24, 25, 25);
+            color: white;
+            padding: 8px 12px;
+            border-radius: 60%;
+            font-weight: bold;
+            font-size: 14px;
+            width: 13px;
+            height: 13px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
 
+        }
 
         .card .profile-image {
             text-align: center;
@@ -59,8 +74,7 @@
             border-radius: 15px;
             object-fit: cover;
         }
-
-        .profile-image>img {
+        .profile-image > img {
             object-fit: cover;
             object-position: top;
             height: 150px;
@@ -163,7 +177,17 @@
             object-fit: cover;
         }
 
-       </style>
+        .paragrapf h2{
+            font-size: 16px;
+            color: rgb(112, 111, 111);
+            margin-top: 5px;
+           }
+    
+
+    </style>
+
+
+
 
 
 </head>
@@ -171,11 +195,12 @@
 <body>
 
     <div class="page-header" >
-    <h1> Alle Studenten </h1> 
-<h2 class="paragraph"> Ontdek je medestudenten aan Hogeschool Utrecht </h2> 
+    <h1> Annbevolen Contacten </h1> 
+<h2 class="paragraph"> Gebaseerd op je interesses en studie </h2> 
 
     <div class="card-container">
         <div class="card">
+            <div class=" card-precent">100%</div>
               <h3 class=" student-naam">  Daan Jansen  </h3>
             <div class="profile-image">
                 <img src="./images/student 4.jpg" alt="Sophie" style="">
@@ -196,18 +221,20 @@
             </div>
         </div>
         <div class="card">
+            <div class=" card-precent">80%</div>
             <div class="profile-image">
-                <h3 class=" student-name "> Thomas Hendriks</h3>
-                <img src="./images/Thomas.png" alt="Sophie">
+                <h3 class=" student-name "> Jim Pos</h3>
+                <img src="./images/student 2.webp" alt="Sophie">
             </div>
 
-            <p> HBO-ICT - Jaar 3 </p>
+            <p> communication & Multimedia
+                Design - Jaar 2 </p>
             <p> Utrecht</p>
-            <p> AI enthusiast building the next generation of smart</p>
+            <p> Passionate about creating user-friendly digital...</p>
             <div class="tags">
-                <span class="tag">Machine Learning </span>
-                <span class="tag"> Paython </span>
-                <span class="tag"> Data Science </span>
+                <span class="tag"> Product Design </span>
+                <span class="tag"> video Editing </span>
+                <span class="tag"> Media Design </span>
                 <span class="tag"> +2 </span>
             </div>
             <div class="actions">
@@ -216,17 +243,19 @@
             </div>
         </div>
         <div class="card">
+            <div class=" card-precent"> 90%</div>
             <div class="profile-image">
-                <h3 class="student-naam"> Maya Patel </h3>
-                <img src="./images/Maya.png" alt="Lotte">
+                <h3 class="student-naam"> Lotte Bakker</h3>
+                <img src="./images/student 3.jpg" alt="Lotte"
+                    style=" ">
             </div>
-            <p> International Business - Jaar 4 </p>
+            <p> Media & Creattive Industries - Jaar 2 </p>
             <p> Eindhoven</p>
-            <p> Aspiring entrepreneur with a passion for sustainable.</p>
+            <p> Storytelling through video and Photography...</p>
             <div class=" tags">
-                <span class="tag"> Entrepreneurship</span>
-                <span class="tag"> Sustainability</span>
-                <span class="tag"> Travel</span>
+                <span class="tag"> Photography</span>
+                <span class="tag"> Video Editing</span>
+                <span class="tag"> Content Creation</span>
                 <span class="tag"> +1 </span>
             </div>
             <div class="actions">
@@ -235,6 +264,7 @@
             </div>
         </div>
         <div class="card">
+            <div class=" card-precent"> 89%</div>
             <div class="profile-image">
                 <h3 class="student-naam"> Jayden Martis</h3>
                 <img src="./images/student5.jpg" alt="Jayden Martis"
@@ -257,14 +287,15 @@
         </div>
 
         <div class="card">
+            <div class=" card-precent">77%</div>
             <div class="profile-image">
-                <h3 class="student-naam"> Laura de Bruin</h3>
-                <img src="./images/Laura.png" alt="Sanne Visser"
+                <h3 class="student-naam"> Sanne Visser</h3>
+                <img src="./images/student6.webp" alt="Sanne Visser"
                     style=" ">
             </div>
             <p> communication & Multimedia
-                Design - Jaar 4 </p>
-            <p> Amersfoort</p>
+                Design - Jaar 2 </p>
+            <p> Den Haag</p>
             <p> Focused on inclusieve desighn and accessibility...</p>
             <div class=" tags">
                 <span class="tag"> UX Research</span>
@@ -278,6 +309,7 @@
             </div>
         </div>
         <div class="card">
+            <div class=" card-precent"> 100%</div>
             <div class="profile-image">
                 <h3 class="student-naam"> Anne Van Dijk</h3>
                 <img src="./images/html.png" alt="Anna Van Dijk">
