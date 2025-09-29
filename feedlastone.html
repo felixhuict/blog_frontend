@@ -1,0 +1,254 @@
+
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Hogeschool Feed - Mock</title>
+
+
+ 
+
+  <style>
+    :root{
+      --bg:#f3f4f6;
+      --card:#ffffff;
+      --muted:#8b8f98;
+      --accent:#1f2937;
+      --pill-bg:#eef2f7;
+      --shadow: 0 6px 18px rgba(15,23,42,0.06);
+      --radius:14px;
+      --gap:20px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;color:var(--accent);background:var(--bg);-webkit-font-smoothing:antialiased}
+    .wrap{
+      max-width:1200px;
+      margin:28px auto;
+      display:grid;
+      grid-template-columns:260px 1fr;
+      gap:24px;
+      padding:0 18px;
+    }
+
+  
+    .sidebar{
+      position:sticky;
+      top:22px;
+      height:fit-content;
+      display:flex;
+      flex-direction:column;
+      gap:18px;
+    }
+    .logo{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      padding:10px 12px;
+      background:linear-gradient(#8b8f98,#1f2937);
+      color:white;
+      border-radius:10px;
+      font-weight:600;
+    }
+    .logo .badge{width:36px;height:36px;border-radius:8px;background:#fff1;display:flex;align-items:center;justify-content:center;font-weight:700}
+    .search{
+      margin-top:4px;
+      display:flex;
+      gap:10px;
+      align-items:center;
+      background:var(--card);
+      padding:10px;
+      border-radius:10px;
+      box-shadow: var(--shadow);
+    }
+    .search input{border:0;outline:0;width:100%;font-size:14px;color:var(--muted)}
+    nav{background:transparent;border-radius:12px;padding:10px 6px;display:flex;flex-direction:column;gap:6px}
+    .nav-item{
+      display:flex;align-items:center;gap:10px;padding:10px;border-radius:10px;color:#111827;font-weight:500;
+    }
+    .nav-item small{color:var(--muted);margin-left:auto;font-weight:600;background:#eef2f7;padding:4px 8px;border-radius:999px;font-size:12px}
+    .nav-item:hover{background:rgba(0,0,0,0.03)}
+    .interests{
+      margin-top:6px;
+      background:var(--card);
+      padding:14px;border-radius:12px;box-shadow:var(--shadow)
+    }
+    .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+    .chip{background:var(--pill-bg);padding:7px 10px;border-radius:999px;font-size:13px;color:#253046}
+
+    
+    .main{display:flex;flex-direction:column;gap:18px}
+    .composer{
+      background:var(--card);padding:14px;border-radius:14px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:12px;
+    }
+    .composer-top{display:flex;gap:12px;align-items:start}
+    .avatar{
+      width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,#6b7280,#111827);
+      color:white;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px
+    }
+    .composer-input{flex:1}
+    .composer-input textarea{
+      width:100%;resize:none;height:66px;border-radius:8px;border:1px solid #eceff3;padding:10px;font-size:14px;font-family:inherit
+    }
+    .composer-actions{display:flex;justify-content:space-between;align-items:center}
+    .btn{
+      background-color:#2f3743; color:white;padding:8px 14px;border-radius:10px;border:0;font-weight:600;cursor:pointer
+    }
+    .tags{display:flex;gap:8px;align-items:center}
+    .tag-pill{background:#f1f5f9;padding:6px 10px;border-radius:999px;font-size:13px;color:#374151}
+
+    
+    .post{
+      background:var(--card);padding:16px;border-radius:14px;box-shadow:var(--shadow);
+      display:flex;flex-direction:column;gap:12px;
+    }
+    .post .meta{display:flex;align-items:center;gap:12px}
+    .post .meta .info{display:flex;flex-direction:column}
+    .post .meta .info .name{font-weight:700}
+    .post .meta .info .sub{font-size:13px;color:var(--muted)}
+    .post .category{background:#eef2f7;padding:6px 9px;border-radius:999px;font-size:12px;color:#1f2937;margin-left:auto}
+    .post h3{margin:6px 0 0 0;font-size:16px}
+    .cover{
+      height:160px;border-radius:10px;overflow:hidden;background:linear-gradient(90deg,#0ea5a5,#7c3aed);
+      display:block;width:100%;object-fit:cover;
+    }
+    .excerpt{color:var(--muted);font-size:14px}
+    .post-footer{display:flex;gap:14px;align-items:center;color:var(--muted);font-size:14px}
+    .icon{display:inline-flex;align-items:center;gap:8px;padding:6px 8px;border-radius:10px}
+    .counts{display:flex;gap:10px;align-items:center}
+
+   
+    .muted{color:var(--muted)}
+    .padded{padding:10px}
+
+  
+    @media (max-width:960px){
+      .wrap{grid-template-columns:1fr;max-width:900px}
+      .sidebar{order:2}
+      .main{order:1}
+    }
+  </style>
+</head>
+<body>
+
+  <div class="wrap">
+    <aside class="sidebar">
+      <div class="logo">
+        <div class="badge">HU</div>
+        <div>
+          <div style="font-size:14px">Hogeschool Utrecht</div>
+          <div style="font-size:12px;color:var(--pill-bg);opacity:0.9">Student community</div>
+        </div>
+      </div>
+
+      <div class="search">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M21 21l-4.35-4.35" stroke="#9aa0a6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <input placeholder="Zoek studenten, events, of nieuws..." aria-label="search">
+      </div>
+
+      <nav>
+        <div class="nav-item">🏠 Feed <small>3</small></div>
+        <div class="nav-item">💞 Matches <small>2</small></div>
+        <div class="nav-item">👥 Studenten</div>
+        <div class="nav-item">📅 Events <small>5</small></div>
+        <div class="nav-item">📰 Nieuws</div>
+        <div class="nav-item">📈 Trending</div>
+        <div class="nav-item">✉️ Berichten <small>8</small></div>
+      </nav>
+
+      <div class="interests">
+        <div style="font-weight:700;margin-bottom:8px">Jouw Interesses</div>
+        <div class="chips">
+          <div class="chip">AI & Tech</div>
+          <div class="chip">Sport</div>
+          <div class="chip">Business</div>
+          <div class="chip">Design</div>
+        </div>
+        <div style="margin-top:10px;font-size:13px;color:var(--muted)">Bewerk interesses</div>
+      </div>
+    </aside>
+
+    <!-- MAIN -->
+    <main class="main">
+      <!-- Composer -->
+      <section class="composer">
+        <div class="composer-top">
+          <div class="avatar">JD</div>
+          <div class="composer-input">
+            <textarea placeholder="Deel je gedachten, ervaringen of vragen met medestudenten..."></textarea>
+            <div style="margin-top:8px;display:flex;gap:8px;align-items:center">
+              <div class="tag-pill">Blog</div>
+              <div class="tag-pill">Ervaring</div>
+              <div class="tag-pill">Vraag</div>
+            </div>
+          </div>
+        </div>
+        <div class="composer-actions">
+          <div class="tags muted">📎 Foto • 📍 Locatie</div>
+          <button class="btn">Publiceren</button>
+        </div>
+      </section>
+
+      <!-- Post Card (main) -->
+      <article class="post">
+        <div class="meta">
+          <div style="display:flex;gap:10px;align-items:center">
+            <div style="width:48px;height:48px;border-radius:50%;background:url('https://via.placeholder.com/48') center/cover"></div>
+            <div class="info">
+              <div class="name">Emma Vermeulen</div>
+              <div class="sub">HBO-ICT, 3e jaar</div>
+            </div>
+          </div>
+          <div class="category">Technologie</div>
+        </div>
+
+        <h3>De Toekomst van AI in het Onderwijs: Hoe Machine Learning Onze Studieervaring Transformeert</h3>
+
+        <img class="cover" src="./images/Scherm­afbeelding 2025-09-15 om 12.07.29.png" alt="cover">
+        <p class="excerpt">Ontdek hoe AI-tools zoals ChatGPT en andere machine learning algoritmes het onderwijs revolutioneren en wat dit betekent voor studenten aan Hogeschool Utrecht.</p>
+
+        <div class="post-footer">
+          <div class="counts">
+            <div class="icon">♡ <span class="muted">34</span></div>
+            <div class="icon">💬 <span class="muted">12</span></div>
+            <div class="icon">🔗 <span class="muted">Deel</span></div>
+          </div>
+          <div style="margin-left:auto" class="muted">5 min leestijd • 2 uur geleden</div>
+        </div>
+      </article>
+
+
+            <article class="post">
+        <div class="meta">
+          <div style="display:flex;gap:10px;align-items:center">
+            <div style="width:48px;height:48px;border-radius:50%;background:url('https://via.placeholder.com/48') center/cover"></div>
+            <div class="info">
+              <div class="name">Lars de Jong</div>
+              <div class="sub">Business Administration, 4e jaar</div>
+            </div>
+          </div>
+          <div class="category">Carrière
+</div>
+        </div>
+
+        <h3>Mijn Stage bij een Tech Startup: Lessen Geleerd en Tips voor Andere Studenten
+ </h3>
+
+        <img class="cover" src="./images/Scherm­afbeelding 2025-09-29 om 15.58.51.png" alt="cover">
+        <p class="excerpt">Een eerlijk verhaal over de ups en downs van stage lopen bij een startup, en praktische tips voor andere HU studenten die een soortgelijk</p>
+
+        <div class="post-footer">
+          <div class="counts">
+            <div class="icon">♡ <span class="muted">67</span></div>
+            <div class="icon">💬 <span class="muted">23</span></div>
+            <div class="icon">🔗 <span class="muted">Deel</span></div>
+          </div>
+          <div style="margin-left:auto" class="muted">8 min leestijd • 1 dag geleden</div>
+        </div>
+      </article>
+
+    </main>
+  </div>
+
+</body>
+</html>
